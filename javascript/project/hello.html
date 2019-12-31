@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hello JS!</title>
+
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <style type="text/css">
+        
+        #selected {
+            color: red;
+        }
+
+        .dark {
+            background-color: black;
+            color: white;
+        }
+
+        .dark #selected {
+            color: yellow;
+        }
+
+        </style>
+
+        <script>
+        let hj = "Hello, JS!";
+        function helloFunction() {
+            alert(hj);
+        }
+        </script>
+
+    </head>
+    <body>
+
+    <ul>
+        <li>HTML</li>
+        <li class="active">CSS</li>
+        <li id="selected">JavaScript</li>
+    </ul>
+    
+    <!-- 1. load JS as inline using html event attr. -->
+    <button onclick="document.body.className='dark';
+                     helloFunction();">Click ME</button>
+
+    <!-- 2. load JS using script tag -->
+    <input type="button" id="hs" value="script button"/>
+    <script type="text/javascript">
+        var hs = document.getElementById('hs');
+        hs.addEventListener('click', function(){
+            helloFunction();
+        });
+    </script>
+
+    <!-- 3. load JS from external file -->
+    <!-- <p><script src="js/script.js"></script></p> -->
+
+    <!-- getElementsByTagName
+    return NodeList (similar to list)
+    that contains elements directed by tag name
+    -->
+    <script>        
+        var ul = document.getElementsByTagName('ul')[0];
+        var lis = ul.getElementsByTagName('li');
+        for (var i = 0; lis.length; i++) {
+            lis[i].style.color = 'red';
+        }
+    </script>
+
+    <!-- getElementsByClassName -->
+    <script>
+        var clis = document.getElementsByClassName('active');
+        for (var i = 0; clis.length; i++) {
+            clis[i].style.color = 'blue';
+        }
+    </script>
+
+    <!-- getElementById
+    points one element and must use it for accessing performance
+    -->
+    <script>
+        var li = document.getElementById('selected');
+        li.style.color = 'green';
+    </script>
+
+    <script>
+        var lis = document.querySelectorAll('li');
+        for (var name in lis) {
+            lis[name].style.color = 'yellow';
+        }
+    </script>
+
+    </body>
+</html>

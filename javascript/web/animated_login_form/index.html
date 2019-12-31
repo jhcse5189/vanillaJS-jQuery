@@ -6,15 +6,30 @@
         <meta charset="utf-8">
         <title>Animated Login Form</title>
         <link rel="stylesheet" href="style.css">
+        <script src="./lib/jQuery/jquery-3.4.1.js"></script>
     </head>
     <body>
 
     <form class="box" action="index.html" method="post">
         <h1>Login</h1>
-        <input type="text" name="" placeholder="Username">
-        <input type="password" name="" placeholder="Password">
+        <input type="text" name="" placeholder="Username" style="ime-mode:inactive;">
+        <input type="password" name="" placeholder="Password" ime-mode="disabled">
         <input type="submit" name="" value="Login">
     </form>
+
+    <!-- TODO: fix with RegExp -->
+    <script>
+        $(".box").keypress(function(event) {
+            var ew = event.which;
+            if(48 <= ew && ew <= 57)
+                return true;
+            if(65 <= ew && ew <= 90)
+                return true;
+            if(97 <= ew && ew <= 122)
+                return true;
+            return false;
+        });
+    </script>
 
     </body>
 </html>

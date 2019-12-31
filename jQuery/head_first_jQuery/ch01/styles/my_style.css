@@ -1,18 +1,35 @@
-#clickMe, #picframe {
-    background: #D8B36E;
-    padding: 20px;
-    font-family: 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
-    color: #000;
-   	border: 2px solid;
-	border-color:  #444 #444 #444 #444;
+body {
+    background-color: #ecf0f1;
     text-align: center;
-    width: 220px;
-    display: block;
 }
 
-#picframe {
-	border-width: 0px 2px 2px 2px;
-	border-color:  none #444 #444 #444;
+div {
+    
+    /* can be clicked 
+    && transparent at first */
+
+}
+
+
+img {
+    width: 220px;
+    margin: 0px auto;
+}
+
+a {
+    color: #2ecc71;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    text-decoration: none;
+    font-style: sans-serif;
+    font-size: 20px;
+}
+
+a:link img, a:visited img {
     display: none;
 }
-    
+
+a:hover img, a:active img {
+    display: block;
+}

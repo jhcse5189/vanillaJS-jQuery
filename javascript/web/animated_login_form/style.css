@@ -5,6 +5,10 @@ body {
     background: #74b9ff;
 }
 
+form {
+    ime-mode: disabled;
+}
+
 .box {
     width: 300px;
     padding: 40px;

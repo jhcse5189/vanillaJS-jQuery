@@ -3,31 +3,49 @@
      reference from DarkCode -->
 <html lang="en-US" dir = "ltr">
     <head>
-        <meta charset="utf-8">
-        <title>Animated Login Form</title>
-        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <title>Spring :: Login</title>
+        <link rel="stylesheet" href="./styles/style.css">
         <script src="./lib/jQuery/jquery-3.4.1.js"></script>
     </head>
     <body>
 
     <form class="box" action="index.html" method="post">
         <h1>Login</h1>
-        <input type="text" name="" placeholder="Username" style="ime-mode:inactive;">
-        <input type="password" name="" placeholder="Password" ime-mode="disabled">
+        <input type="text" name="" placeholder="Username">
+        <input type="password" name="" placeholder="Password">
+
         <input type="submit" name="" value="Login">
+        <!-- TODO: 'seperate' from post method
+                && identical design with Login 'button' -->
+        <a href="./templates/forget_password.html">Forget Password?</a>
+        <a href="./templates/register.html">Register</a>
     </form>
 
     <!-- TODO: fix with RegExp -->
     <script>
         $(".box").keypress(function(event) {
+
+            var regex = new RegExp("^[a-zA-Z0-9]");
+            var str = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (regex.test(str)) {
+                return true;
+            }
+            event.preventDefault();
+            return false;
+            /*
             var ew = event.which;
+            // 0 to 9
             if(48 <= ew && ew <= 57)
                 return true;
+            // A to Z
             if(65 <= ew && ew <= 90)
                 return true;
+            // a to z
             if(97 <= ew && ew <= 122)
                 return true;
             return false;
+            */
         });
     </script>
 

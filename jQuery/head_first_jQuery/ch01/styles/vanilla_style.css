@@ -1,0 +1,17 @@
+a {
+    color: #2ecc71;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    text-decoration: none;
+    font-style: sans-serif;
+    font-size: 20px;
+}
+
+a:link img, a:visited img {
+    display: none;
+}
+
+a:hover img, a:active img {
+    display: block;
+}

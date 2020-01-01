@@ -3,17 +3,25 @@
 	<head>
         <meta charset="UTF-8">
 		<title>Furry Friends Campaign</title>
-		<link rel="stylesheet" type="text/css" href="styles/my_style.css">
+		<link rel="stylesheet" type="text/css" href="./styles/my_style.css">
+		<script src="./lib/jQuery/jquery-3.4.1.js"></script>
 	</head>
 	<body>
-		<div id="showfriend">
-			<a href="#">
-				<div id="clickMe"><h2>Show Me Today's<br>
-                                      Furry Friends!</h2></div>
-                <div id="picframe">
-                    <img src="images/rose.jpg" alt="Our Furry Friend">
-                </div>
-            </a>
+		<div id="clickMe">
+			<h2>Show Me Today's<br>
+				Furry Friends!</h2>
 		</div>
+		<div id="picframe">
+			<img src="images/rose.jpg" alt="Our Furry Friend">
+		</div>
+
+		<script>
+			$(document).ready(function() {
+					$("#clickMe").click(function() {
+						$("img").fadeIn(1000);
+						$("#picframe").slideToggle("slow");
+				});
+			});
+		</script>
 	</body>
 </html>

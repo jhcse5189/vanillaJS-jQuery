@@ -8,7 +8,10 @@
 로그인 / 비번찾기 / 회원가입
 
     ~/index.html
+    size="16" maxlength="16"
+    아이디와 비번은 최대 16자리까지 입력할 수 있도록 제한함
 
+    <form action="login.php" method="post">
 
 
 ### 로그인 한 다음 페이지 (템플릿은 메인 로그인 페이지랑 비슷하게 하면 댐)

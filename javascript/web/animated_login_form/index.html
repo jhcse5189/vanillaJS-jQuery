@@ -10,17 +10,17 @@
     </head>
     <body>
 
-    <form class="box" action="index.html" method="post">
+    <form class="box" action="login.php" method="post">
         <h1>Login</h1>
-        <input type="text" name="" placeholder="Username">
-        <input type="password" name="" placeholder="Password">
+        <input type="text" size="16" maxlength="16" name="uid" placeholder="User ID">
+        <input type="password" size="16" maxlength="16" name="" placeholder="Password">
 
-        <input type="submit" name="" value="Login">
-        <!-- TODO: 'seperate' from post method
-                && identical design with Login 'button' -->
-        <a href="./templates/forget_password.html">Forget Password?</a>
-        <a href="./templates/register.html">Register</a>
+        <input type="submit" class="index_menu" name="" value="Login">
+        <!-- TODO: align design -->
+        <a class="index_menu" href="./templates/forget_password.html">Forget Password?</a>
+        <a class="index_menu" href="./templates/register.html">Register</a>
     </form>
+
 
     <!-- TODO: fix with RegExp -->
     <script>

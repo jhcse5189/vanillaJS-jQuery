@@ -1,0 +1,7 @@
+.no_hover {
+    border: 3px solid #000;
+}
+
+.hover {
+    border: 3px solid #f00;
+}

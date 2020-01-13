@@ -1,0 +1,59 @@
+/* Order Convention */
+/*
+
+ - Layout Properties (position, float, clear, display)
+ - Box Model Properties (width, height, margin, padding)
+ - Visual Properties (color, background, border, box-shadow)
+ - Typography Properties (font-size, font-family, text-align, text-transform)
+ - Misc Properties (cursor, overflow, z-index)
+
+*/
+
+
+#controls {
+    clear: both;
+}
+
+#my_hand {
+    clear: both;
+    border: 1px solid grey;
+    height: 250px;
+    width: 835px;
+}
+
+#my_hand div{
+    float: left;
+}
+
+#btnHit, #btnStick, #btnRestart {
+    display: none;
+    float: left;
+}
+
+h3 {
+    display: inline;
+    padding-right: 40px;
+}
+
+.current_hand {
+    float: left;
+}
+.win{
+	color:green;
+}
+.lose{
+	color:red;
+}
+
+#result {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
+
+/* greater-than sign:: to select element with a specific parent  */
+#result > img {
+    width: 500px;
+    height: 250px;
+}

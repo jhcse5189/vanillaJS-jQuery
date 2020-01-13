@@ -120,7 +120,7 @@ $(document).ready(function(){
 				good_card = true;
 				var c = deck[ index ];
 				used_cards[used_cards.length] = index;
-				hand.cards[hand.cards.length] = c;	
+				hand.cards[hand.cards.length] = c;
 				
 				var $d = $("<div>");
 				$d.addClass("current_hand")

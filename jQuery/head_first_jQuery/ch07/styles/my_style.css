@@ -2,10 +2,35 @@ body {
     background-color: #000000;
 }
 
+#banner {
+    display: block;
+}
+
+.bar {
+    display: inline;
+    position: relative;
+    top: 6px;
+    left: 6px;
+}
+
 p {
     color: #33ff66;
     font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
     font-size: 12px;
+}
+
+.btn {
+    position: relative;
+    left: 8px;
+}
+
+#btnRandom, #btnReset {
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+#btnRandom:focus, #btnReset:focus {
+    outline: 0;
 }
 
 #top {

@@ -5,27 +5,25 @@ $(document).ready(function(){
         $.ajax({
             url: "finishers.xml",
             cache: false,
-            datatype: "xml",
+            dataType: "xml",
             success: function(xml) {
                 $("#finishers_m").empty();
                 $("#finishers_f").empty();
                 $("#finishers_all").empty();
                 $(xml).find("runner").each(function() {
-                    var info = '<h4>test</h4>';//`<li>Name: ${$(this).find("fname").text()} ${$(this).find("lname").text()}. Time: ${$(this).find("time").text()}<li>`;
+                    var info = '<li>test</li>';//`<li>Name: ${$(this).find("fname").text()} ${$(this).find("lname").text()}. Time: ${$(this).find("time").text()}<li>`;
                     if ($(this).find("gender").text() == "m") {
-                        $("#finisher_m").append(info);
-			console.log('appended to m...');
+                        $("#finishers_m").append(info);
+			            console.log('appended to m...');
                     } else if ($(this).find("gender").text() == "f") {
-                        $("#finisher_f").append(info);
+                        $("#finishers_f").append(info);
                     } else { }
-                    $("#finisher_all").append(info);
+                    $("#finishers_all").append(info);
                 });
                 getTime();
             },
         });
     }
-
-    getXMLRacers();
 	
     function getTime(){
         var a_p = "";
@@ -44,4 +42,6 @@ $(document).ready(function(){
         
         $('#updatedTime').html(curr_hour + ":" + curr_min + ":" + curr_sec + " " + a_p );
     }
+
+    getXMLRacers();
 });

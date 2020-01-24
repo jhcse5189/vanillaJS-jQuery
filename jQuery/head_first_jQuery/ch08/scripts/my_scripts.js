@@ -1,17 +1,19 @@
 $(document).ready(function(){
 
     var FREQ = 10000;
+    let repeat = true;
 
     function showFrequency() {
-        console.log('in sf');
         $("#freq").html("Page refreshes every " + FREQ/1000 + " second(s).");
     }
 
     function startAJAXcalls() {
-        setTimeout(function() {
-            getXMLRacers();
-            startAJAXcalls();
-        }, FREQ);
+        if (repeat) {
+            setTimeout(function() {
+                getXMLRacers();
+                startAJAXcalls();
+            }, FREQ);
+        }
     }
 
     function getXMLRacers() {
@@ -38,11 +40,10 @@ $(document).ready(function(){
     }
 
     function getTimeAjax() {
-        console.log('in gtac');
         $("#updatedTime").load("time.php");
     }
 	
-    function getTime() {
+    function getTime(){
         var a_p = "";
         var d = new Date();
         var curr_hour = d.getHours();
@@ -59,6 +60,17 @@ $(document).ready(function(){
         
         $('#updatedTime').html(curr_hour + ":" + curr_min + ":" + curr_sec + " " + a_p );
     }
+
+    $("#btnStart").click(function() {
+        repeat = true;
+        startAJAXcalls();
+        showFrequency();
+    });
+
+    $("#btnStop").click(function() {
+        repeat = false;
+        $("#freq").html('Update paused');
+    });
 
     showFrequency();
     getXMLRacers();

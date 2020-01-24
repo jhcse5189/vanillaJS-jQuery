@@ -10,7 +10,7 @@ $(document).ready(function(){
                 $("#finishers_f").empty();
                 $("finishers_all").empty();
                 $(xml).find("runner").each(()=> {
-                    var info = `<li>Name: ${$(this).find("fname").text()} ${$(this).find(('lname').text())}.
+                    var info = `<li>Name: ${$(this).find("fname").text()} ${$(this).find("lname").text()}.
                                 Time: ${$(this).find("time").text()}<li>`
                     if ($(this).find("gender").text() == "m") {
                         $("finisher_m").append(info);

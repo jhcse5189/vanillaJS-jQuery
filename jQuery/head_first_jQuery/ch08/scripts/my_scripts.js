@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
     function getXMLRacers() {
-	console.log('get in getXMLRacers func.');
         $.ajax({
             url: "finishers.xml",
             cache: false,
@@ -11,10 +10,9 @@ $(document).ready(function(){
                 $("#finishers_f").empty();
                 $("#finishers_all").empty();
                 $(xml).find("runner").each(function() {
-                    var info = '<li>test</li>';//`<li>Name: ${$(this).find("fname").text()} ${$(this).find("lname").text()}. Time: ${$(this).find("time").text()}<li>`;
+                    var info = `<li>Name: ${$(this).find("fname").text()} ${$(this).find("lname").text()}. Time: ${$(this).find("time").text()}<li>`;
                     if ($(this).find("gender").text() == "m") {
                         $("#finishers_m").append(info);
-			            console.log('appended to m...');
                     } else if ($(this).find("gender").text() == "f") {
                         $("#finishers_f").append(info);
                     } else { }

@@ -1,23 +1,24 @@
 $(document).ready(function(){
 
     function getXMLRacers() {
+	console.log('get in getXMLRacers func.');
         $.ajax({
             url: "finishers.xml",
             cache: false,
             datatype: "xml",
-            success: xml => {
+            success: function(xml) {
                 $("#finishers_m").empty();
                 $("#finishers_f").empty();
-                $("finishers_all").empty();
-                $(xml).find("runner").each(()=> {
-                    var info = `<li>Name: ${$(this).find("fname").text()} ${$(this).find("lname").text()}.
-                                Time: ${$(this).find("time").text()}<li>`
+                $("#finishers_all").empty();
+                $(xml).find("runner").each(function() {
+                    var info = '<h4>test</h4>';//`<li>Name: ${$(this).find("fname").text()} ${$(this).find("lname").text()}. Time: ${$(this).find("time").text()}<li>`;
                     if ($(this).find("gender").text() == "m") {
-                        $("finisher_m").append(info);
-                    } else {
-                        $("finisher_f").append(info);
-                    }
-                    $("finisher_all").append(info);
+                        $("#finisher_m").append(info);
+			console.log('appended to m...');
+                    } else if ($(this).find("gender").text() == "f") {
+                        $("#finisher_f").append(info);
+                    } else { }
+                    $("#finisher_all").append(info);
                 });
                 getTime();
             },
@@ -26,7 +27,7 @@ $(document).ready(function(){
 
     getXMLRacers();
 	
-	function getTime(){
+    function getTime(){
         var a_p = "";
         var d = new Date();
         var curr_hour = d.getHours();

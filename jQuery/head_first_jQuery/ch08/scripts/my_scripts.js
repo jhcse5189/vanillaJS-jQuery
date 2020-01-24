@@ -8,6 +8,8 @@ $(document).ready(function(){
             startAJAXcalls();
         }, FREQ);
     }
+
+    showFrequency();
     getXMLRacers();
     startAJAXcalls();
 
@@ -29,7 +31,7 @@ $(document).ready(function(){
                     } else { }
                     $("#finishers_all").append(info);
                 });
-                getTime();
+                getTimeAjax();
             },
         });
     }
@@ -50,5 +52,13 @@ $(document).ready(function(){
         if (curr_sec.length == 1) { curr_sec = "0" + curr_sec; } 
         
         $('#updatedTime').html(curr_hour + ":" + curr_min + ":" + curr_sec + " " + a_p );
+    }
+
+    function showFrequency() {
+        $("#freq").html(`Page refreshes every ${FREQ/1000} second(s).`);
+    }
+
+    function getTimeAjax() {
+        $("#updatedTime").load("time.php");
     }
 });

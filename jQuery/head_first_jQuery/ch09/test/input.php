@@ -13,6 +13,7 @@ if ($_POST['action'] == 'form') {
         $log = "nope...";
         echo $log;
     }
+    mysqli_close($connect);
 }
 
 if ($_GET['action'] == 'getDB') {
@@ -24,9 +25,8 @@ if ($_GET['action'] == 'getDB') {
         array_push($db, array('msg'=>$row['msg']));
     }
     echo json_encode(array("db"=>$db));
+    mysqli_close($connect);
 }
-
-mysqli_close($connect);
 
 function db_query($sql) {
     $connect = mysqli_connect("localhost", "root", "bammerdb", "simple_php_post");

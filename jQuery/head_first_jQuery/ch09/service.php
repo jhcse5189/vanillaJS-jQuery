@@ -24,13 +24,13 @@ if ($_POST['action'] == 'addRunner') {
         echo $msg;
         //fail('Insert failed.');
     }
-    mysqli_close($connect);
 
     echo("
     <script>
         location.href='./service.php';
     </script>
     ");
+    exit;
 }
 
 if ($_GET['action'] == 'getRunners') {
@@ -42,10 +42,8 @@ if ($_GET['action'] == 'getRunners') {
         array_push($runners, array('fname'=>$row['first_name'], 'lname'=>$row['last_name'], 'gender'=>$row['gender'], 'time'=>$row['finish_time']));
     };
     echo json_encode(array("runners"=>$runners));
-    mysqli_close($connect);
+    exit;
 }
-
-mysqli_close($connect);
 
 function db_query($sql) {
     $connect = mysqli_connect("localhost", "root", "bammerdb", "hfjq_race_info");

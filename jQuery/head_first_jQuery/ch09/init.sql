@@ -9,3 +9,12 @@ CREATE TABLE IF NOT EXISTS runners (
     gender VARCHAR(1) NOT NULL,
     finish_time VARCHAR(10)
 );
+
+INSERT INTO runners (first_name, last_name, gender, finish_time)
+VALUES ('John', 'Smith', 'm', '25:31'),
+       ('Frank', 'Jones', 'm', '26.08'),
+       ('Bob', 'Hope', 'm', '26:38'),
+       ('Ryan', 'Rice', 'm', '28:24'),
+       ('Jacob', 'Zimmy', 'm', '29:24'),
+       ('Mary', 'Brown', 'f', '26:01'),
+       ('Jane', 'Smith', 'f', '28:04');

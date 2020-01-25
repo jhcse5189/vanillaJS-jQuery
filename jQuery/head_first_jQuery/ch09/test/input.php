@@ -3,18 +3,23 @@
 if ($_POST['action'] == 'form') {
     $msg = htmlspecialchars($_POST['form_box']);
 
-    $sql = "INSERT INTO db (msg) VALUES ($msg)";
+    $sql = "INSERT INTO db (msg) VALUES ('$msg')";
     $result = db_query($sql);
-    echo $result;
 
     if ($result) {
         $log = "ok.";
         echo $log;
     } else {
-        $log = "nope...";
+        $log = "nope.";
         echo $log;
     }
     mysqli_close($connect);
+
+    echo("
+        <script>
+            location.href='./index.html';
+        </script>
+    ");
 }
 
 if ($_GET['action'] == 'getDB') {
@@ -30,8 +35,7 @@ if ($_GET['action'] == 'getDB') {
 }
 
 function db_query($sql) {
-    $connect = mysqli_connect("localhost", "root", "bammerdb", "simple_php_post")
-    OR die(echo('Disconnected.'));
+    $connect = mysqli_connect("localhost", "root", "bammerdb", "simple_php_post");
     return mysqli_query($connect, $sql);
 }
 ?>

@@ -12,7 +12,7 @@ if ($_POST['action'] == 'addRunner') {
 
     $time = $minutes . ":" . $seconds;
     $sql = "INSERT INTO runners (first_name, last_name, gender, finish_time)
-            VALUES ($fname, $lname, $gender, $time);";
+            VALUES ('$fname', '$lname', '$gender', '$time');";
     $result = db_query($sql);
 
     if ($result) {

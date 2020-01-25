@@ -3,7 +3,9 @@ $(document).ready(function(){
     var FREQ = 10000;
     let repeat = true;
 
-
+    showFrequency();
+    getDBRacers();
+    startAJAXcalls();
 
     function showFrequency() {
         $("#freq").html(`Page refreshes every ${FREQ/1000} second(s).`);
@@ -104,17 +106,17 @@ $(document).ready(function(){
         $("#freq").html('Update paused');
     });
 
-    showFrequency();
-    getDBRacers();
-    startAJAXcalls();
+    $("#addRunner").submit(function() {
+        return false;
+    });
 
     $("#btnSave").click(function() {
         var data = $("#addRunner :input").serializeArray();
-        $.post($("#addRunner").attr('action'), data, function(json) {
-            if (json.status == "fail") {
+        $.post($("#addRunner").attr("action"), data, function(json) {
+            if (json.status == 'fail') {
                 alert(json.message);
             }
-            if (json.status == "success") {
+            if (json.status == 'success') {
                 alert(json.message);
                 clearInputs();
             }
@@ -126,9 +128,5 @@ $(document).ready(function(){
             $(this).val('');
         });
     }
-
-    $("#addRunner").submit(function() {
-        return false;
-    });
-
 });
+

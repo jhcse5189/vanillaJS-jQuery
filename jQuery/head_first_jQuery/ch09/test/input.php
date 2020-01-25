@@ -1,13 +1,22 @@
 <?php
 
-$sql = "SELECT msg FROM db";
-$result = db_query($sql);
+if ($_POST['action'] == 'form') {
+    $msg = htmlspecialchars($_POST['form_box']);
 
-$db = array();
-while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-    array_push($db, array('msg'=>$row['msg']));
+    $sql = "INSERT INTO db (msg) VALUES ($msg)";
+    $result = db_query($sql);
 }
-echo json_encode(array("db"=>$db));
+
+if ($_GET['action'] == 'getDB') {
+    $sql = "SELECT msg FROM db";
+    $result = db_query($sql);
+    
+    $db = array();
+    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        array_push($db, array('msg'=>$row['msg']));
+    }
+    echo json_encode(array("db"=>$db));
+}
 
 mysqli_close($connect);
 

@@ -7,7 +7,7 @@ if ($_POST['action'] == 'addRunner') {
     $minutes = htmlspecialchars($_POST['txtMinutes']);
     $seconds = htmlspecialchars($_POST['txtSeconds']);
 
-    echo $fname . " " . $lname;
+    //echo $fname . " " . $lname;
     // regex.
 
     $time = $minutes . ":" . $seconds;

@@ -21,7 +21,7 @@ if ($_POST['action'] == 'addRunner') {
     } else {
         fail('Insert failed.');
     }
-
+    mysqli_close($connect);
 }
 
 if ($_GET['action'] == 'getRunners') {
@@ -33,14 +33,13 @@ if ($_GET['action'] == 'getRunners') {
         array_push($runners, array('fname'=>$row['first_name'], 'lname'=>$row['last_name'], 'gender'=>$row['gender'], 'time'=>$row['finish_time']));
     };
     echo json_encode(array("runners"=>$runners));
+    mysqli_close($connect);
 }
 
 mysqli_close($connect);
 
 function db_query($sql) {
-    $connect = mysqli_connect("localhost", "root", "bammerdb", "hfjq_race_info")
-    OR die(fail('Disconnected to MariaDB'));
-
+    $connect = mysqli_connect("localhost", "root", "bammerdb", "hfjq_race_info");
     return mysqli_query($connect, $sql);
 }
 

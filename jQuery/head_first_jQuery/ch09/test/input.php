@@ -21,9 +21,7 @@ echo json_encode(array("db"=>$db));
 mysqli_close($connect);
 
 function db_query($sql) {
-    $connect = mysqli_connect("localhost", "root", "bammerdb", "hfjq_race_info")
-    OR die(fail('Disconnected to MariaDB'));
-
+    $connect = mysqli_connect("localhost", "root", "bammerdb", "simple_php_post")
     return mysqli_query($connect, $sql);
 }
 ?>

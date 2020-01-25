@@ -21,14 +21,28 @@ $(document).ready(function(){
         $.ajax({ // $.getJSON("service.php", function(json) { ... });
             url: "service.php",
             dataType: "json",
-            data: json,
+            data: "json",
             success: function(json) {
-                alert(json.runners.length);
+                if (json.runners.length > 0) {
+                    $("#finishers_m").empty();
+                    $("#finishers_f").empty();
+                    $("#finishers_all").empty();
+                    $.each(json.runners, function() {
+                        var info = `<li>Name: ${this["fname"]} ${this["lname"]}. Time: ${this["time"]}</li>`;
+                        if (this["gender"] == "m") {
+                            $("#finishers_m").append(info);
+                        } else if (this['gender'] == "f") {
+                            $("#finishers_f").append(info);
+                        } else { }
+                        $("#finishers_all").append(info);
+                    });
+                }
                 getTimeAjax();
             },
         });
     }
 
+    /*
     function getXMLRacers() {
         $.ajax({
             url: "finishers.xml",
@@ -51,11 +65,13 @@ $(document).ready(function(){
             },
         });
     }
+    */
 
     function getTimeAjax() {
         $("#updatedTime").load("time.php");
     }
-	
+    
+    /*
     function getTime(){
         var a_p = "";
         var d = new Date();
@@ -73,6 +89,7 @@ $(document).ready(function(){
         
         $('#updatedTime').html(curr_hour + ":" + curr_min + ":" + curr_sec + " " + a_p );
     }
+    */
 
     $("#btnStart").click(function() {
         repeat = true;

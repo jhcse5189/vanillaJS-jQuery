@@ -17,11 +17,20 @@ if ($_POST['action'] == 'addRunner') {
 
     if ($result) {
         $msg = "Runner: " . $fname . " " . $lname . " added successfully.";
-        success($msg);
+        echo $msg;
+        //success($msg);
     } else {
-        fail('Insert failed.');
+        $msg = "nope...";
+        echo $msg;
+        //fail('Insert failed.');
     }
     mysqli_close($connect);
+
+    echo("
+    <script>
+        location.href='./service.php';
+    </script>
+    ");
 }
 
 if ($_GET['action'] == 'getRunners') {

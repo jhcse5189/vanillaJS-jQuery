@@ -5,6 +5,7 @@ if ($_POST['action'] == 'form') {
 
     $sql = "INSERT INTO db (msg) VALUES ($msg)";
     $result = db_query($sql);
+    echo $result;
 
     if ($result) {
         $log = "ok.";
@@ -29,7 +30,8 @@ if ($_GET['action'] == 'getDB') {
 }
 
 function db_query($sql) {
-    $connect = mysqli_connect("localhost", "root", "bammerdb", "simple_php_post");
+    $connect = mysqli_connect("localhost", "root", "bammerdb", "simple_php_post")
+    OR die(echo('Disconnected.'));
     return mysqli_query($connect, $sql);
 }
 ?>

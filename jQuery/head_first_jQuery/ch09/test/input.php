@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        <h3>in php</h3>
-        <div id="php">
-        </div>
-    </body>
-</html>
-
 <?php
 
 $sql = "SELECT msg FROM db";
@@ -21,7 +12,7 @@ echo json_encode(array("db"=>$db));
 mysqli_close($connect);
 
 function db_query($sql) {
-    $connect = mysqli_connect("localhost", "root", "bammerdb", "simple_php_post")
+    $connect = mysqli_connect("localhost", "root", "bammerdb", "simple_php_post");
     return mysqli_query($connect, $sql);
 }
 ?>

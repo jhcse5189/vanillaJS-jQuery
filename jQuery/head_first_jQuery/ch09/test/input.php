@@ -5,6 +5,14 @@ if ($_POST['action'] == 'form') {
 
     $sql = "INSERT INTO db (msg) VALUES ($msg)";
     $result = db_query($sql);
+
+    if ($result) {
+        $log = "ok.";
+        echo $log;
+    } else {
+        $log = "nope...";
+        echo $log;
+    }
 }
 
 if ($_GET['action'] == 'getDB') {

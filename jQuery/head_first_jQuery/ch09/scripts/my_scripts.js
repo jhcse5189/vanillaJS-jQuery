@@ -3,7 +3,7 @@ $(document).ready(function(){
     var FREQ = 10000;
     let repeat = true;
 
-    
+
 
     function showFrequency() {
         $("#freq").html(`Page refreshes every ${FREQ/1000} second(s).`);
@@ -109,8 +109,8 @@ $(document).ready(function(){
     startAJAXcalls();
 
     $("#btnSave").click(function() {
-        var data = $("#addRunner:input").serializeArray();
-        $.post($("#addRunner").attr("action"), data, function(json) {
+        var data = $("#addRunner :input").serializeArray();
+        $.post($("#addRunner").attr('action'), data, function(json) {
             if (json.status == "fail") {
                 alert(json.message);
             }
@@ -122,7 +122,7 @@ $(document).ready(function(){
     });
 
     function clearInputs() {
-        $("#addRunner:input").each(function() {
+        $("#addRunner :input").each(function() {
             $(this).val('');
         });
     }

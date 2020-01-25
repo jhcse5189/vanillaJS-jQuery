@@ -7,20 +7,7 @@ if ($_POST['action'] == 'addRunner') {
     $minutes = htmlspecialchars($_POST['txtMinutes']);
     $seconds = htmlspecialchars($_POST['txtSeconds']);
 
-    // prevent to input special characters and numbers for name
-    if (preg_match('/[^a-zA-Z\s]/g', $fname) || preg_match('/[^a-zA-Z\s]/g', $lname)) {
-        fail('Invalid name provided.');
-    }
-
-    // only numbers for finish time
-    if (preg_match('/^[0-9]*/g', $minutes) || preg_match('/^[0-9]*/g', $seconds)) {
-        fail('Invaild finish time provided.');
-    }
-
-    // not allow any empty input
-    if (empty($fname) || empty($lname) || empty($gender) || empty($minutes) || empty($seconds)) {
-        fail('There are empty input on your form.');
-    }
+    // regex.
 
     $time = $minutes . ":" . $seconds;
     $sql = "INSERT INTO runners (first_name, last_name, gender, finish_time)
@@ -55,9 +42,11 @@ function db_query($sql) {
 }
 
 function fail($message) {
+    echo "fail";
     die(json_encode(array('status'=>'fail', 'message'=>$message)));
 }
 
 function success($message) {
+    echo "sccuess";
     die(json_encode(array('status'=>'success', 'message'=>$message)));
 }

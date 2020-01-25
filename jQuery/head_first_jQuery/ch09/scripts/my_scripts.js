@@ -3,6 +3,8 @@ $(document).ready(function(){
     var FREQ = 10000;
     let repeat = true;
 
+    
+
     function showFrequency() {
         $("#freq").html(`Page refreshes every ${FREQ/1000} second(s).`);
     }

@@ -7,6 +7,7 @@ if ($_POST['action'] == 'addRunner') {
     $minutes = htmlspecialchars($_POST['txtMinutes']);
     $seconds = htmlspecialchars($_POST['txtSeconds']);
 
+    echo $fname . " " . $lname;
     // regex.
 
     $time = $minutes . ":" . $seconds;
@@ -21,7 +22,9 @@ if ($_POST['action'] == 'addRunner') {
         fail('Insert failed.');
     }
 
-} else if ($_GET['action'] == 'getRunners') {
+}
+
+if ($_GET['action'] == 'getRunners') {
     $sql = "SELECT first_name, last_name, gender, finish_time FROM runners ORDER BY finish_time";
     $result = db_query($sql);
     

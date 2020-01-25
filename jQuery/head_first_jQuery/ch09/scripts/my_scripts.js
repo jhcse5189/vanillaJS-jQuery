@@ -19,7 +19,7 @@ $(document).ready(function(){
 
     function getDBRacers() {
         $.ajax({ // $.getJSON("service.php", function(json) { ... });
-            url: "service.php",
+            url: "service.php?action=getRunners",
             dataType: "json",
             data: "json",
             success: function(json) {

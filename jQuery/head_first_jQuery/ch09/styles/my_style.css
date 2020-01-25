@@ -43,9 +43,20 @@ body{
 }
 #main div a { color:#000; font-weight:bold; }
 
+form {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+form > input, form > select {
+  padding: 2px;
+  margin: 2px;
+}
+
 button {
   position: relative;
   right: 2px;
   bottom: 2px;
   border-radius: 8px;
+  cursor: pointer;
+  outline: none;  
 }

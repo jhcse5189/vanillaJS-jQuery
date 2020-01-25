@@ -10,10 +10,23 @@ $(document).ready(function(){
     function startAJAXcalls() {
         if (repeat) {
             setTimeout(function() {
-                getXMLRacers();
+                // replace from getXMLRacers();
+                getDBRacers();
                 startAJAXcalls();
             }, FREQ);
         }
+    }
+
+    function getDBRacers() {
+        $.ajax({ // $.getJSON("service.php", function(json) { ... });
+            url: "service.php",
+            dataType: "json",
+            data: json,
+            success: function(json) {
+                alert(json.runners.length);
+                getTimeAjax();
+            },
+        });
     }
 
     function getXMLRacers() {
@@ -73,7 +86,7 @@ $(document).ready(function(){
     });
 
     showFrequency();
-    getXMLRacers();
+    getDBRacers();
     startAJAXcalls();
 
     $("#btnSave").click(function() {

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        #item {
+            display: none;
+            position: relative;
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+        </style>
+        <script src="../lib/jQuery/jquery-3.4.1.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $("#btnChain").click(function() {
+                $("#item").fadeIn('slow').fadeOut('slow').fadeIn('slow').fadeOut('slow').slideDown('slow').slideUp('slow');
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <button id="btnChain">jQuery can be chained!</button>
+        <div id="item">I am a item :)</div>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        #item {
+            display: block;
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+        </style>
+        <script src="../lib/jQuery/jquery-3.4.1.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $("#hide").click(function() {
+                $("#item").hide();
+            });
+
+            $("#show").click(function() {
+                $("#item").show();
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <button id="show">Show Me</button>
+        <button id="hide">Hide Me</button>
+        <div id="item">I am a item :)</div>
+    </body>
+</html>

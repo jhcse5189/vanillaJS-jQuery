@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        #item {
+            display: block;
+            position: relative;
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+        </style>
+        <script src="../lib/jQuery/jquery-3.4.1.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $("#btnAnimate").click(function() {
+                $("#item").animate({
+                    opacity: 0.5,
+                    left: "+=50",
+                }, 1000);
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <button id="btnAnimate">Animate?</button>
+        <div id="item">I am a item :)</div>
+    </body>
+</html>

@@ -14,7 +14,7 @@ To develop server-side javascript (like Node.js) in securely
 chapter1. [JavaScript and the Web](#JavaScript)\
 chapter2. [Secure Ajax RESTful APIs](#RESTful-APIs)\
 chapter3. [Cross-site Scripting](#XXS)\
-chapter4. [Cross-site Request Forgery](#Request-Forgery)\
+chapter4. [Cross-site Request Forgery](#CSRF)\
 chapter5. [Misplaced Trust in the Client](#Misplaced-Trust)\
 chapter6. [JavaScript Phishing](#Phishing)\
 \
@@ -22,16 +22,33 @@ chapter6. [JavaScript Phishing](#Phishing)\
 
 ### JavaScript
 
-- [X] remind some usages of jQuery and ajax, and introduce security issues in js 
+- [X] Reminding some usages of jQuery and ajax, introduce basic ideas and two main security issues in js, XXS and CSRF.
 
 ### RESTful-APIs
 
+- [X] Construct RESTful API server using node and express.js for simple to-do application
+
+- [X] Cross-Origin Resource Sharing
+- [ ] Test CORS on aws or wampserver
+~~~
+    - use chrome browser with target like "..." --disable-web-security --user-data-dir="C:\${dir}"
+    - run ./external/external_node.html and external_server.js on other port or domain
+~~~
+
+- [ ] Primary method for preventing CORS
+
 ### XXS
 
-### Request-Forgery
+### CSRF
 
 ### Misplaced-Trust
 
 ### Phishing
 
 ### Others
+
+* Repository Setting
+
+- set .gitignore for node in root
+
+* * *

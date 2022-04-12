@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../src/js/jquery-3.6.0.js"></script>
+    <title>Basic Selector | Tag</title>
+
+</head>
+<body>
+    <h1>Basic jQuery Selector | Tag</h1>
+
+    <p>
+        <b>Tag</b> Selector can select DOM elements by tag.<br>
+        It contains 'All Selector(*)', 'Itself Selector(this)'<br>
+        and also selects them using tag groups.
+    </p>
+
+    <hr>
+
+    <div id="all">
+        <h2>This is a heading.</h2>
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+    </div>
+
+    <hr>
+
+    <div id="group">
+        <p>
+            I want emphasize this <span class="highlight-class">word</span>!<br>
+            When I saying something like this, there will be some <span class="highlight-class">important</span> words.<br>
+
+            <h4>I wanna go HOME!"</h4>
+            
+            But I can't...
+        </p>
+    </div>
+
+    <hr>
+
+    <button>Click</button>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#all *").css("background-color", "yellow");
+                $(".highlight-class, h4").css("background-color", "yellow");
+                $(this).css("background-color", "#7777ff");
+            });
+        });
+
+    </script>
+
+</body>
+</html>

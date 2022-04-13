@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../src/js/jquery-3.6.0.js"></script>
+		<title>AJAX with jQuery</title>
+	</head>
+	<body>
+		<div id="content">
+			<h2>jQuery AJAX will change this heading!</h2>			
+		</div>
+
+		<button>Change Content</button>
+		
+		<script>
+		
+		// $.post() method
+		$(document).ready(function(){
+			$("button").click(function(){
+				$.post("ajax_text.txt", {
+					author: "bammer",
+					last_modified: "2022-04-13"
+					}, function(data, status){
+					window.alert("Data: " + data + "\nStatus: " + status);
+				});
+			});
+		});
+
+		/* $.get() method
+		
+		$(document).ready(function(){
+			$("button").click(function(){
+				$.get("ajax_text.txt", function(data, status){
+					window.alert("Data: " + data + "\nStatus: " + status);
+				});
+			});
+		});
+		*/
+
+		/* .load() method
+
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("#content").load("ajax_text.txt", function(responseTxt, statusTxt, xhr) {
+					if (statusTxt == "success")
+						window.alert("External content loaded successfully!");
+					if (statusTxt == "error")
+						window.alert("Error: " + xhr.status + " (" + xhr.statusText + ")");
+				});
+			});
+		});
+		*/
+
+		/*
+		$(document).ready(function(){
+			$("button").click(function(){
+				$.ajax({
+					url: "./ajax_script.js",
+					// async: false,
+					dataType: "script",
+					success: function(result){
+						$("#content").html(result);
+					}
+				});
+			});
+		});
+		*/
+		
+		/*
+		function loadDoc() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("content").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET", "abcde.txt", true);
+			xhttp.send();
+		}
+		*/
+		</script>
+		
+	</body>
+</html>

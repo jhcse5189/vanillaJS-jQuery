@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>2022 S/S MineSweeper Record</title>
+</head>
+<body>
+    <!-- 2022 S/S season's minesweeper record -->
+    <!--
+        - name & time # about favorite artist
+        +. sorting
+    -->
+
+    <!-- header -->
+    <header>
+        <h2>2022 S/S MineSweeper Record!</h2>
+    </header>
+
+    <!-- main division -->
+    <div id="main">
+        <ul class="idTabs">
+            <li><a href="#male">Male's Records</a></li>
+            <li><a href="#female">Female's Records</a></li>
+            <li><a href="#all">ALL Records</a></li>
+        </ul>
+
+        <div id="male">
+            <h4>Male's Records</h4>
+            <ul id="records_m"></ul>
+        </div>
+        <div id="female">
+            <h4>female's Records</h4>
+            <ul id="records_f"></ul>
+        </div>
+        <div id="all">
+            <h4>All Records</h4>
+            <ul id="records_all"></ul>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <h4>Congratulations to all our participants!</h4>
+        <button id="btnStart">Start Page Update</button>
+        <button id="btnStop">Stop Page Update</button>
+        <br>
+        
+        <span id="freq"></span>
+        <br><br>
+
+        Last Updated: <div id="updatedTime"></div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="./src/js/jquery-3.6.0.js"></script>
+    <script src="./src/js/jquery.idTabs.min.js"></script>
+
+</body>
+</html>

@@ -28,10 +28,15 @@ $(document).ready(function(){
     }
 
     $("#btnStart").click(function(){
-        showFrequency();
+        if (!repeat) { // prevent unwanted AJAXcall
+            repeat = true;
+            startAJAXcalls();
+            showFrequency();
+        }
     });
 
     $("#btnStop").click(function(){
+        repeat = false;
         $("#freq").html("Update paused.");
     });
 

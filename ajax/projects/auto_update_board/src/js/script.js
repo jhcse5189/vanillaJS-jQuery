@@ -11,6 +11,7 @@ $(document).ready(function(){
         if (repeat) {
             setTimeout(function() {
                 getXMLPaticipants();
+                getTime();
                 startAJAXcalls();
             }, FREQ);
         }
@@ -25,6 +26,20 @@ $(document).ready(function(){
                 console.log(xml);
             }
         });
+    }
+
+    function getTime() {
+        var d = new Date();
+
+        var curr_hour = d.getHours().toString();
+        var curr_min = d.getMinutes().toString();
+        var curr_sec = d.getSeconds().toString();
+
+        if (curr_hour.length == 1) { curr_hour = "0" + curr_hour; }
+        if (curr_min.length == 1) { curr_min = "0" + curr_min; }
+        if (curr_sec.length == 1) { curr_sec = "0" + curr_sec; }
+
+        $("#updatedTime").html("Last Updated : " + curr_hour + ":" + curr_min + ":" + curr_sec);
     }
 
     $("#btnStart").click(function(){
@@ -42,5 +57,6 @@ $(document).ready(function(){
 
     showFrequency();
     getXMLPaticipants();
+    getTime();
     startAJAXcalls();
 });

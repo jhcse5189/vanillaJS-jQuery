@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML Prolog -->
+<records>
+    <!-- root element : records -->
+    <participant>
+        <name>Kim Minjeong</name>
+        <group>aespa</group>
+        <gender>f</gender>
+        <time>940</time>
+        <!-- <pic></pic> -->
+    </participant>
+
+    <participant>
+        <name>Jo Yuri</name>
+        <group>I*Z ONE</group>
+        <gender>f</gender>
+        <time>1040</time>
+    </participant>
+
+    <participant>
+        <name>Kwon Ji-yong</name>
+        <group>BIG BANG</group>
+        <gender>m</gender>
+        <time>825</time>
+    </participant>
+</records>

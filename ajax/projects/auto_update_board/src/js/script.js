@@ -23,6 +23,7 @@ $(document).ready(function(){
             cache: false, // deny browser cache
             dataType: "xml",
             success: function(xml) {
+                // TODO : parse XML
                 console.log(xml);
             }
         });

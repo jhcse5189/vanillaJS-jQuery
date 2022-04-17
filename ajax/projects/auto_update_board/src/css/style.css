@@ -3,11 +3,17 @@ body {
     color: white;
 }
 
+/* TODO : styles for idTabs */
+
 /* remove li::marker */
 #main ul {
     list-style-type: none;
 }
 
-/* TODO : styles for idTabs */
-
-/* TODO : styles for buttons (be round) */
+/* styles for buttons (be round) */
+button {
+    position: relative;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 8px;
+}

@@ -30,10 +30,19 @@ $(document).ready(function(){
 
                 // parse XML
                 $(xml).find("participant").each(function(){
-                    console.log("find!s");
 
-                    var info = `<li>${$(this).find("name").text()} (${$(this).find("time").text()})</li>`;
+                    var t = parseInt($(this).find("time").text());
+                    
+                    // TODO : implement time parsing at other method
+                    var m = Math.floor(t / 60);
+                    var s = t % 60;
 
+                    if (m.toString().length == 1) { m = "0" + m; }
+                    if (s.toString().length == 1) { s = "0" + s; }
+
+                    var info = `<li>${$(this).find("name").text()} (${m}:${s})</li>`;
+
+                    // TODO : implement sorted append
                     if ($(this).find("gender").text() == "m") {
                         $("#records_m").append(info);
                     } else if ($(this).find("gender").text() == "f") {

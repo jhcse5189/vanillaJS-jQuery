@@ -23,8 +23,25 @@ $(document).ready(function(){
             cache: false, // deny browser cache
             dataType: "xml",
             success: function(xml) {
-                // TODO : parse XML
-                console.log(xml);
+                // prevent duplicated records
+                $("#records_m").empty();
+                $("#records_f").empty();
+                $("#records_all").empty();
+
+                // parse XML
+                $(xml).find("participant").each(function(){
+                    console.log("find!s");
+
+                    var info = `<li>${$(this).find("name").text()} (${$(this).find("time").text()})</li>`;
+
+                    if ($(this).find("gender").text() == "m") {
+                        $("#records_m").append(info);
+                    } else if ($(this).find("gender").text() == "f") {
+                        $("#records_f").append(info);
+                    }
+
+                    $("#records_all").append(info);
+                });
             }
         });
     }

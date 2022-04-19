@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <script src="../../src/js/jquery-3.6.0.js"></script>
+    <title>File Upload</title>
+</head>
+<body>
+    <input type="file" id="input" multiple onchange="handleFiles(this.files)">
+	
+	<h3>File Info.</h3>
+	
+    <p id="len">Length : </p>
+    
+    <div id="infos">
+        
+    </div>
+
+    <div class="test">
+        wow
+        <p>asdf</p>
+    </div>
+
+    <div class="test">holly molly</div>
+
+	<script>
+	const flist = document.getElementById("input").files;
+
+    
+
+    function handleFiles(files) {
+        document.getElementById("len").innerHTML = "Length : " + files.length;
+
+        $("#infos").empty();
+
+        for (let i = 0, numFiles = files.length; i < numFiles; i++) {
+            const file = files[i];
+
+            let cout = file.name + ", " + file.size + ", " + file.type;
+
+            let node = document.createElement("p");
+            let textnode = document.createTextNode(cout);
+            node.appendChild(textnode);            
+
+            document.getElementById("infos").appendChild(node);
+        }
+    }
+
+	</script>
+</body>
+</html>

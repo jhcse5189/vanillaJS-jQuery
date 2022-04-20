@@ -8,10 +8,11 @@
 
 2. [Javascript Fundamentals](#2.-Javascript-Fundamentals)
 
-### 2. Javascript Fundamentals
+## 2. Javascript Fundamentals
 
-3. [The modern mode, "use strict";](https://github.com/jhcse5189/vanillaJS-jQuery/tree/master/modern-js/Javascript-Fundamentals/use-strict.js)
+3. [The modern mode, "use strict";](https://github.com/jhcse5189/vanillaJS-jQuery/tree/master/modern-js/Javascript-Fundamentals/strict-mode/strict-mode.js)
 
 ### Ref.
 
+> [Frontend Developer Roadmap 2022](https://roadmap.sh/frontend)
 > [javascript.info](https://javascript.info/)

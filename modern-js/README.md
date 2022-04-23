@@ -12,6 +12,8 @@
 
 3. [The modern mode, "use strict";](https://github.com/jhcse5189/vanillaJS-jQuery/tree/master/modern-js/Javascript-Fundamentals/strict-mode/strict-mode.js)
 
+4. [Variables](https://github.com/jhcse5189/vanillaJS-jQuery/tree/master/modern-js/Javascript-Fundamentals/variables)
+
 ### Ref.
 
 > [Frontend Developer Roadmap 2022](https://roadmap.sh/frontend)
